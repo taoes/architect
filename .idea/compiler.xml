@@ -4,10 +4,6 @@
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
-      <module name="architect.domain-model-driver" target="1.8" />
-      <module name="architect.domain-model-driver.main" target="1.8" />
-      <module name="architect.domain-model-driver.test" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
