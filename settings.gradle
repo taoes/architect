@@ -1,2 +1,5 @@
 rootProject.name = 'architect'
+include 'micro-service'
+include 'event-driver'
+include 'domain-model-driver'
 
