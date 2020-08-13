@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.zhoutao123.architect.layered'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '8'
 
 configurations {
     compileOnly {
@@ -19,6 +19,8 @@ repositories {
 }
 
 dependencies {
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.73'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
