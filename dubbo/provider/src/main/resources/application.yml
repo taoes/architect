@@ -1,0 +1,10 @@
+dubbo:
+  scan:
+    base-packages: com.zhoutao123.article.dubbo
+  registry:
+    address: zookeeper://localhost:21810
+  protocol:
+    name: dubbo
+    port: 20880
+  application:
+    name: Provider

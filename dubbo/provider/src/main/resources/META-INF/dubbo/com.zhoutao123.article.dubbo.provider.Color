@@ -1,0 +1,4 @@
+blue=com.zhoutao123.article.dubbo.provider.impl.BlueColor
+red=com.zhoutao123.article.dubbo.provider.impl.RedColor
+default=com.zhoutao123.article.dubbo.provider.impl.DefaultColor
+com.zhoutao123.article.dubbo.provider.impl.ColorWrapper
