@@ -12,6 +12,7 @@
     <module>network</module>
       <module>java-se</module>
       <module>dubbo</module>
+      <module>struct</module>
   </modules>
 
   <properties>
