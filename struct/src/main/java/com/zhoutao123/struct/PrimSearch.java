@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * 高效查询素数
+ *
+ * @apiNote 时间复杂度: O(n/2)
  */
 public class PrimSearch {
     public static void main(String[] args) {
