@@ -3,8 +3,7 @@ package com.zhoutao123.architect.buffer;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 
-1   拍、
-'地址发送Q``1'
+
 /**
  * <li> 在堆内存中申请的ByteBuffer,其实际类型为  {@link java.nio.HeapByteBuffer}</>
  * <li>而在直接内存中申请的ByteBuffer，其实际类型为 {@link java.nio.DirectByteBuffer}</li>
@@ -25,8 +24,7 @@ public class BufferClearDemo {
         byte[] bytes = "Hello,Java ByteBuffer".getBytes(StandardCharsets.UTF_8);
         ByteBuffer buffer = ByteBuffer.wrap(bytes);
 
-?
-        ">;khjvgcfΩ≈"
+
         // 复制缓存区，复制后两个缓存区具有不同的索引值，但是其共享内存数据
         ByteBuffer newBuffer = buffer.duplicate();
 

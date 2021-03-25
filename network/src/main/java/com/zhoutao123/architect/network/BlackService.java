@@ -1,12 +1,11 @@
 package com.zhoutao123.architect.network;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -15,20 +14,30 @@ public class BlackService {
     public static void main(String[] args) throws IOException {
         Class<? extends String[]> aClass = args.getClass();
         ServerSocket socket = new ServerSocket();
-        socket.bind(new InetSocketAddress(9090));
+        socket.bind(new InetSocketAddress(10011));
         while (true) {
             // 阻塞操作，等待连接
             Socket accept = socket.accept();
-            // 接收到连接后创建线程处理数据
+            System.out.println("接收到连接后创建线程处理数据");
             new Thread(
                     () -> {
-                        try (InputStream stream = accept.getInputStream()) {
+                        // 轮询等待接收
+                        try (InputStream stream = accept.getInputStream(); OutputStream os = accept.getOutputStream()) {
                             BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-                            String s = reader.readLine();
-                            System.out.println("接收数据:" + s);
+                            while (true) {
+                                String s = reader.readLine();
+                                if (s.contains("byte")) {
+                                    System.out.println("接收到程序退出命令:" + s);
+                                    return;
+                                }
+                                String format = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+                                os.write((format + ":已成功执行" + s).getBytes());
+                                os.flush();
+                            }
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+
                     })
                     .start();
         }
