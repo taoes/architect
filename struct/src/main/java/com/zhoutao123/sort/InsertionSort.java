@@ -5,7 +5,7 @@ package com.zhoutao123.sort;
  *
  * @apiNote 遍历数据，将大数和旁边的交换，每次遍历将大数放在最顶部，完成排序,时间复杂度: O(n^2)
  */
-public class InsertSort<T extends Comparable<T>> implements Sort<T> {
+public class InsertionSort<T extends Comparable<T>> implements Sort<T> {
 
   private T[] list;
 

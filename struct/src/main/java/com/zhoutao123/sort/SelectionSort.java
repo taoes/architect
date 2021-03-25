@@ -5,7 +5,7 @@ package com.zhoutao123.sort;
  *
  * @apiNote 从中选出最小的数据和头部的数据交换，然后进行下次遍历，时间复杂度 O(n^2)
  */
-public class SelectSort<T extends Comparable<T>> implements Sort<T> {
+public class SelectionSort<T extends Comparable<T>> implements Sort<T> {
 
   private T[] list;
 

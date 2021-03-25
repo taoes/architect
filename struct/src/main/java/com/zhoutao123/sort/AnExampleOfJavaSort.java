@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /** Java 实现排序的相关接口 */
-public class JavaSort {
+public class AnExampleOfJavaSort {
 
   public static void main(String[] args) {
     Integer[] waitSortArray = new Integer[20];
@@ -21,22 +21,27 @@ public class JavaSort {
     long start = System.nanoTime();
     System.out.print("冒泡排序法:");
     print(new BubbleSort<Integer>().sort(waitSortArray.clone()));
-    System.out.println("耗时:" + (System.nanoTime() - start) /100000.0 + "毫秒");
+    System.out.println("耗时:" + (System.nanoTime() - start) / 100000.0 + "毫秒");
 
     System.out.print("选择排序法:");
     start = System.nanoTime();
     print(new SelectionSort<Integer>().sort(waitSortArray.clone()));
-    System.out.println("耗时:" + (System.nanoTime() - start) /100000.0 + "毫秒");
+    System.out.println("耗时:" + (System.nanoTime() - start) / 100000.0 + "毫秒");
 
     System.out.print("插入排序法:");
     start = System.nanoTime();
     print(new InsertionSort<Integer>().sort(waitSortArray.clone()));
-    System.out.println("耗时:" + (System.nanoTime() - start) /100000.0 + "毫秒");
+    System.out.println("耗时:" + (System.nanoTime() - start) / 100000.0 + "毫秒");
 
     System.out.print("希尔排序法:");
     start = System.nanoTime();
     print(new ShellSort<Integer>().sort(waitSortArray.clone()));
-    System.out.println("耗时:" + (System.nanoTime() - start) /100000.0 + "毫秒");
+    System.out.println("耗时:" + (System.nanoTime() - start) / 100000.0 + "毫秒");
+
+    System.out.print("归并排序法:");
+    start = System.nanoTime();
+    print(new MergeSort<Integer>().sort(waitSortArray.clone()));
+    System.out.println("耗时:" + (System.nanoTime() - start) / 100000.0 + "毫秒");
   }
 
   public static <T> void print(T[] data) {
