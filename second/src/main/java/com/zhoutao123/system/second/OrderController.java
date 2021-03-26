@@ -5,7 +5,6 @@ import org.redisson.api.RAtomicLong;
 import org.redisson.api.RLock;
 import org.redisson.api.RSet;
 import org.redisson.api.RedissonClient;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +18,11 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping("/api/order")
 public class OrderController {
 
-  @Autowired private RedissonClient client;
+  private final RedissonClient client;
+
+  public OrderController(RedissonClient client) {
+    this.client = client;
+  }
 
   @GetMapping
   public String createOrder(@RequestParam Long productId, @RequestParam Long userId)
