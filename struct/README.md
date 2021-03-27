@@ -21,7 +21,6 @@
 
 ![img.png](img/sort/insert_img.png)
 
-
 ### 高级排序算法
 
 #### 希尔排序
@@ -31,8 +30,11 @@
 
 ![img.png](img/sort/shell_img.png)
 
-
 #### 归并排序
 
++ 核心算法: 分治算法
++ 时间复杂度: O(nlogn)
+
+![img.png](img/sort/merge_img.png)
 
 

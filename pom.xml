@@ -16,6 +16,7 @@
         <module>java-se</module>
         <module>dubbo</module>
         <module>struct</module>
+        <module>MessageQueue</module>
     </modules>
 
     <properties>

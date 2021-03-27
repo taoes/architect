@@ -14,6 +14,7 @@ public class ShellSort<T extends Comparable<T>> implements Sort<T> {
 
   @Override
   public T[] sort(T[] list) {
+
     if (list == null || list.length < 2) {
       return list;
     }

@@ -34,7 +34,7 @@ public class OrderController {
     }
     try {
       RAtomicLong atomicLong = client.getAtomicLong("PRODUCT:COUNT");
-      Long count = atomicLong.get();
+      long count = atomicLong.get();
       if (count <= 0) {
         log.info("购买失败,{} 卖光了", userId);
         return "卖光了";
@@ -53,6 +53,7 @@ public class OrderController {
     }
   }
 
+  /** 初始化数据 */
   @GetMapping("/init")
   public String ok(Integer count) {
     client.getAtomicLong("PRODUCT:COUNT").getAndSet(count);
@@ -60,6 +61,7 @@ public class OrderController {
     return "OK";
   }
 
+  /** 获取抢到的客户 */
   @GetMapping("/sale")
   public Set<Long> getSaleUser() {
     RSet<Long> user = client.getSet("PRODUCT:SALE");

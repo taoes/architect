@@ -7,12 +7,14 @@ import java.util.Random;
 public class AnExampleOfJavaSort {
 
   public static void main(String[] args) {
-    Integer[] waitSortArray = new Integer[20];
-    Random random = new Random();
-    for (int i = 0; i < waitSortArray.length; i++) {
-      int randomNumber = random.nextInt(100);
-      waitSortArray[i] = randomNumber;
-    }
+        Integer[] waitSortArray = new Integer[200];
+        Random random = new Random();
+        for (int i = 0; i < waitSortArray.length; i++) {
+          int randomNumber = random.nextInt(1000);
+          waitSortArray[i] = randomNumber;
+        }
+
+    // Integer[] waitSortArray = {6, 5, 3, 7, 1, 4, 5, 9, 7};
 
     System.out.print("未排序数组:");
     print(waitSortArray);
@@ -41,6 +43,11 @@ public class AnExampleOfJavaSort {
     System.out.print("归并排序法:");
     start = System.nanoTime();
     print(new MergeSort<Integer>().sort(waitSortArray.clone()));
+    System.out.println("耗时:" + (System.nanoTime() - start) / 100000.0 + "毫秒");
+
+    System.out.print("快速排序法:");
+    start = System.nanoTime();
+    print(new QuickSort<Integer>().sort(waitSortArray.clone()));
     System.out.println("耗时:" + (System.nanoTime() - start) / 100000.0 + "毫秒");
   }
 
