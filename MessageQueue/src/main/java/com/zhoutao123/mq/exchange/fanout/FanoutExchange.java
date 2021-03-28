@@ -1,4 +1,4 @@
-package com.zhoutao123.mq.exchange;
+package com.zhoutao123.mq.exchange.fanout;
 
 import com.rabbitmq.client.Channel;
 import com.zhoutao123.mq.RabbitMqUtils;

@@ -4,9 +4,6 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
-import java.io.IOException;
-import java.util.concurrent.TimeoutException;
-
 public class RabbitMqUtils {
 
   private static Channel channel;
@@ -31,10 +28,12 @@ public class RabbitMqUtils {
     }
   }
 
-  public static void close() throws IOException, TimeoutException {
+  public static void close() {
     if (closed) {
       return;
     }
+
+    System.out.println("关闭MQ连接");
 
     try {
       if (channel != null && channel.isOpen()) {
