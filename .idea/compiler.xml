@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="struct" />
+        <module name="spring" />
         <module name="provider" />
         <module name="model" />
         <module name="java-se" />
@@ -23,6 +24,7 @@
       <module name="consumer" options="-parameters" />
       <module name="provider" options="-parameters" />
       <module name="second" options="-parameters" />
+      <module name="spring" options="-parameters" />
     </option>
   </component>
 </project>

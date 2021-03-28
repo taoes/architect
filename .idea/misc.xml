@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/dubbo/consumer/pom.xml" />
         <option value="$PROJECT_DIR$/system/second-product/pom.xml" />
         <option value="$PROJECT_DIR$/second/pom.xml" />
+        <option value="$PROJECT_DIR$/MessageQueue/spring/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

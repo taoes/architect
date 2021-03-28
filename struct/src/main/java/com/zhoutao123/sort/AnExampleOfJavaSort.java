@@ -7,7 +7,7 @@ import java.util.Random;
 public class AnExampleOfJavaSort {
 
   public static void main(String[] args) {
-        Integer[] waitSortArray = new Integer[200];
+        Integer[] waitSortArray = new Integer[10];
         Random random = new Random();
         for (int i = 0; i < waitSortArray.length; i++) {
           int randomNumber = random.nextInt(1000);
@@ -48,6 +48,12 @@ public class AnExampleOfJavaSort {
     System.out.print("快速排序法:");
     start = System.nanoTime();
     print(new QuickSort<Integer>().sort(waitSortArray.clone()));
+    System.out.println("耗时:" + (System.nanoTime() - start) / 100000.0 + "毫秒");
+
+
+    System.out.print("堆 排序法:");
+    start = System.nanoTime();
+    print(new HeapSort<Integer>().sort(waitSortArray.clone()));
     System.out.println("耗时:" + (System.nanoTime() - start) / 100000.0 + "毫秒");
   }
 
