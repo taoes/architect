@@ -12,6 +12,7 @@
         <module name="provider" />
         <module name="model" />
         <module name="java-se" />
+        <module name="Leetcode" />
         <module name="consumer" />
         <module name="network" />
         <module name="second" />
